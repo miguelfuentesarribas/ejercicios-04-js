@@ -1,0 +1,67 @@
+body {
+    background-color: #2B303A;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    margin-left: 5%;
+}
+
+button {
+    background-color: white; /* Green */
+    color: black;
+    padding: 18px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-right: 4px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 6px;
+    border: solid 3px rgb(130, 48, 48);
+}
+
+.button {
+    float: left;
+}
+
+button:hover {
+    background-color: rgb(204, 103, 103);
+    color: white;
+}
+
+.active {
+    background-color: rgb(130, 48, 48);
+    color: white;
+}
+
+input{
+    height: 50px;
+    font-size: x-large;
+}
+
+#datosFin {
+    margin: 5%;
+}
+
+li {
+    list-style-type: none;
+    font-size: 200%;
+}
+
+div {
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+#datosFin {
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+
+  
