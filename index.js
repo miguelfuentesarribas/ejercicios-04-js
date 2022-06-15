@@ -18,6 +18,9 @@ for (var i = 0; i < btns.length; i++) {
         var current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
+        current = document.getElementsByClassName("active");
+        console.log(current[0].id);
+        genre = current[0].id;
         setParams();
     });
 }
@@ -78,8 +81,4 @@ async function getGames(genero) {
     }
 }
 
-var datosFinal = lista.map(function(game){
-    return '<li>' + game.name + '</li>';
-}).join('');
 
-document.getElementById("datosFin").innerHTML = datosFinal;
