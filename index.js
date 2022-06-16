@@ -19,7 +19,6 @@ for (var i = 0; i < btns.length; i++) {
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
         current = document.getElementsByClassName("active");
-        console.log(current[0].id);
         genre = current[0].id;
         setParams();
     });
@@ -32,7 +31,6 @@ var lista = [];
 async function setParams() {
     token = await getToken();
     lista = await getGames(genre);
-    console.log(lista);
     document.getElementById("datosFin").innerHTML = pintarFinal(lista);
 }
 setParams();
@@ -81,4 +79,11 @@ async function getGames(genero) {
     }
 }
 
+function pulsada() {
+    var inputValue = document.getElementById("searchbar");
+    var lista2 = lista.filter(gameName =>
+        gameName.name.toLowerCase().includes(inputValue.value)
+    );
+    document.getElementById("datosFin").innerHTML = pintarFinal(lista2);
+}
 
