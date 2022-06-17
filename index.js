@@ -4,25 +4,8 @@ const authRequestUrl = "https://id.twitch.tv/oauth2/token?client_id=i2b59j1pxt7d
 const gameListUrl = "https://api.igdb.com/v4/games";
 const clientID = 'i2b59j1pxt7dt6f0stfgr96lezsghb';
 const shooterId = '5';
-const strategyId = '10';
+const plataformId = '8';
 const adentureId = '31';
-
-
-
-// boton activo
-var inputsContiner = document.getElementById("inputsDiv");
-var btns = inputsContiner.getElementsByClassName("btn");
-
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-        current = document.getElementsByClassName("active");
-        genre = current[0].id;
-        setParams();
-    });
-}
 
 //lista y valores por defectp
 var genre = document.getElementsByClassName("active")[0].id;
@@ -35,15 +18,6 @@ async function setParams() {
 }
 setParams();
 
-function pintarFinal(lista) {
-    if (lista == undefined) {
-        return null;
-    }
-    return lista.map(function(game){
-        return '<li>' + game.name + '</li>';
-    }).join('');
-}
-
 async function getToken() {
     const response = await fetch(authRequestUrl, {method: 'POST'})
     const data = await response.json()
@@ -54,8 +28,8 @@ async function getGames(genero) {
 
     if (genero == 'shooter') {
         var a = shooterId
-    } else if (genero == 'strategy') {
-        var a = strategyId
+    } else if (genero == 'plataform') {
+        var a = plataformId
     } else {
         var a = adentureId
     }
@@ -78,6 +52,33 @@ async function getGames(genero) {
         console.error(err);
     }
 }
+
+
+// boton activo
+var inputsContiner = document.getElementById("inputsDiv");
+var btns = inputsContiner.getElementsByClassName("btn");
+
+for (var i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        current = document.getElementsByClassName("active");
+        genre = current[0].id;
+        setParams();
+    });
+}
+
+
+function pintarFinal(lista) {
+    if (lista == undefined) {
+        return null;
+    }
+    return lista.map(function(game){
+        return '<li>' + game.name + '</li>';
+    }).join('');
+}
+
 
 function pulsada() {
     var inputValue = document.getElementById("searchbar");

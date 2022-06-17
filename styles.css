@@ -21,8 +21,8 @@ button {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 6px;
-    border: solid 3px rgb(130, 48, 48);
+    border-radius: 3px;
+    border: solid 1px rgb(0, 0, 0);
 }
 
 .button {
