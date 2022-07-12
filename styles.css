@@ -4,10 +4,6 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-h1{
-    margin-left: 5%;
-}
-
 button {
     background-color: white; /* Green */
     color: black;
@@ -44,8 +40,8 @@ input{
     font-size: x-large;
 }
 
-#datosFin {
-    margin: 5%;
+h1{
+    margin-left: 5%;
 }
 
 li {
@@ -57,11 +53,3 @@ div {
     margin-left: 5%;
     margin-top: 10px;
 }
-
-#datosFin {
-    margin-left: 5%;
-    margin-top: 10px;
-}
-
-
-  

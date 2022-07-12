@@ -5,14 +5,14 @@ const gameListUrl = "https://api.igdb.com/v4/games";
 const clientID = 'i2b59j1pxt7dt6f0stfgr96lezsghb';
 const shooterId = '5';
 const plataformId = '8';
-const adentureId = '31';
+const adventureId = '31';
 
 //lista y valores por defectp
 var genre = document.getElementsByClassName("active")[0].id;
 var token = '';
 var lista = [];
 async function setParams() {
-    token = await getToken();
+    token = await getToken(); 
     lista = await getGames(genre);
     document.getElementById("datosFin").innerHTML = pintarFinal(lista);
 }
@@ -25,14 +25,7 @@ async function getToken() {
 }
 
 async function getGames(genero) {
-
-    if (genero == 'shooter') {
-        var a = shooterId
-    } else if (genero == 'plataform') {
-        var a = plataformId
-    } else {
-        var a = adentureId
-    }
+    let id = genero == 'shooter' ? shooterId : (genero == 'plataform' ? plataformId : adventureId);
 
     try {
     const response = await fetch(
@@ -42,7 +35,7 @@ async function getGames(genero) {
                 'Client-ID': `${clientID}`,
                 'Authorization': `Bearer ${token}`,
             },
-            body: `fields name;limit 500; where genres = (${a});`
+            body: `fields name;limit 500; where genres = (${id});`
         }
     );
     const data = await response.json()
